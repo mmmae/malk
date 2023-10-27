@@ -1,0 +1,21 @@
+[package]
+name = "malk"
+version = "0.1.0"
+authors = ["mmmae"]
+edition = "2021"
+
+[dependencies]
+byteorder = "1.5.0"
+egui = "0.23.0"
+eframe = { version = "0.23.0", default-features = false, features = [
+    "default_fonts",
+    "glow",
+]}
+rfd = "0.11.0"
+
+# optimise all dependencies (even in debug)
+[profile.release]
+opt-level = 2
+
+[profile.dev.package."*"]
+opt-level = 2
